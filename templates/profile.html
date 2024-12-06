@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incio</title>
+</head>
+<body>
+    {% if context.error %}
+    <p>ERROR: {{context.error}}</p>
+    {% endif %}
+    {% if context.exito %}
+    <p>EXITO: {{context.exito}}</p>
+    {% endif %}
+    {% if context.username %}
+    <p>bienvenido: {{context.username}}</p>
+    {% endif %}
+
+
+    <h1>INCIO</h1>
+
+    <h3>Actualizar sus datos</h3>
+    <a href="{{ url_for('update') }}"><button>a actualizar datos</button> </a>
+
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+</body>
+</html>

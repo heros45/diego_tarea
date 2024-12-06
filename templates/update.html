@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>actualizar</title>
+</head>
+<body>
+    {% if context.error %}
+    <p>ERROR: {{context.error}}</p>
+    {% endif %}
+    {% if context.exito %}
+    <p>EXITO: {{context.exito}}</p>
+    {% endif %}
+
+    <h1>Actualizacion de datos</h1>
+
+    <form method="POST">
+        <label for="name"> Ingrese su nombre</label>
+        <input type="text" maxlength="50" name="name" id="">
+        <label for="dni">Ingrese su dni</label>
+        <input type="number" maxlength="8" name="dni" id="">
+        <label for="phone"> Ingrese su numero de celular</label>
+        <input type="number" maxlength="9" name="phone" id="">
+        <label for="city"> Ingrese su ciudad de referencia</label>
+        <input type="text" name="city" id="">
+        <label for="birth_date"> Ingrese su fecha de nacimiento</label>
+        <input type="date" name="birth_date" id="">
+        <br>
+        <button>actualizar</button>
+    </form>
+    <br>
+    <h3>sus datos actuales son:</h3>
+    <div>
+        {% if context %}
+        {% for key, value in context.items() %}
+            <p>{{key}}: <span>{{value}}</span></p>
+        {% endfor %}    
+        {% endif %}
+    </div>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+</body>
+</html>

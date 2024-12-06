@@ -1,6 +1,8 @@
 #!/bin/sh
+echo "instalanddo pip, por si no esta instalado"
+apt install python3-pip -y
 echo "instalando sqlite3"
-apt install sqlite3 
+apt install sqlite3 -y
 .databases
 .exit
 echo "actualizando pip"

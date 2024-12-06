@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "instalanddo pip, por si no esta instalado"
 apt install python3-pip -y
 echo "instalando sqlite3"
@@ -15,7 +15,7 @@ echo "activando entorno virtual"
 source venv/bin/activate
 
 echo "instalando requirements"
-pip install -r requirements.tx
+pip install -r requirements.txt
  
 echo "ejecuntado flask"
 python3 login.py 
